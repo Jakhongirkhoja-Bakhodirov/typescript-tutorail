@@ -97,17 +97,56 @@ console.log(`The month ${month} in ${year} has ${day} days`);
 // }
 
 //While Loop
-let counter = 0;
+// let counter = 0;
 
-while (counter < 5) {
-    console.log(counter);
-    counter++;
-}
+// while (counter < 5) {
+//     console.log(counter);
+//     counter++;
+// }
 
 //do-while loop
-let i = 0;
+// let i = 0;
 
-do {
-    console.log(i);
-    i++
-} while (i < 10);
+// do {
+//     console.log(i);
+//     i++
+// } while (i < 10);
+
+//Break To terminate a loop
+let products = [
+    { name: 'phone', price: 700 },
+    { name: 'tablet', price: 900 },
+    { name: 'laptop', price: 1200 }
+];
+
+for (var i = 0; i < products.length; i++) {
+    if (products[i].price == 900)
+        break;
+}
+
+// show the products
+console.log(products[i]);
+
+//Use break statement to break a switch
+let salary = [
+    { position: 'junior', price: 700 },
+    { position: 'middle', price: 900 },
+    { position: 'senior', price: 1200 }
+];
+
+let discountSalary = 0;
+let juniorSalary = salary[1];
+
+switch (juniorSalary.position) {
+    case 'junior':
+        discount = 5;
+        break;
+    case 'middle':
+        discount = 10;
+        break;
+    case 'senior':
+        discount = 15;
+        break;
+}
+
+console.log(`There is a ${discount}% on ${juniorSalary.position}.`);
