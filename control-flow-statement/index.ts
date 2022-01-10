@@ -113,40 +113,65 @@ console.log(`The month ${month} in ${year} has ${day} days`);
 // } while (i < 10);
 
 //Break To terminate a loop
-let products = [
-    { name: 'phone', price: 700 },
-    { name: 'tablet', price: 900 },
-    { name: 'laptop', price: 1200 }
-];
+// let products = [
+//     { name: 'phone', price: 700 },
+//     { name: 'tablet', price: 900 },
+//     { name: 'laptop', price: 1200 }
+// ];
 
-for (var i = 0; i < products.length; i++) {
-    if (products[i].price == 900)
-        break;
-}
+// for (var i = 0; i < products.length; i++) {
+//     if (products[i].price == 900)
+//         break;
+// }
 
-// show the products
-console.log(products[i]);
+// // show the products
+// console.log(products[i]);
 
 //Use break statement to break a switch
-let salary = [
-    { position: 'junior', price: 700 },
-    { position: 'middle', price: 900 },
-    { position: 'senior', price: 1200 }
-];
+// let salary = [
+//     { position: 'junior', price: 700 },
+//     { position: 'middle', price: 900 },
+//     { position: 'senior', price: 1200 }
+// ];
 
-let discountSalary = 0;
-let juniorSalary = salary[1];
+// let discountSalary = 0;
+// let juniorSalary = salary[1];
 
-switch (juniorSalary.position) {
-    case 'junior':
-        discount = 5;
-        break;
-    case 'middle':
-        discount = 10;
-        break;
-    case 'senior':
-        discount = 15;
-        break;
-}
+// switch (juniorSalary.position) {
+//     case 'junior':
+//         discount = 5;
+//         break;
+//     case 'middle':
+//         discount = 10;
+//         break;
+//     case 'senior':
+//         discount = 15;
+//         break;
+// }
 
-console.log(`There is a ${discount}% on ${juniorSalary.position}.`);
+// console.log(`There is a ${discount}% on ${juniorSalary.position}.`);
+
+//Continue statement
+// for (let index = 0; index < 9; index++) {
+    
+//     // if index is odd, skip it
+//     if (index % 2)
+//         continue;
+
+//     // the following code will be skipped for odd numbers
+//     console.log(index);
+// }
+
+let index = 9;
+let count = 0;
+
+do {
+    index += 1;
+
+    if (index % 2)
+        continue;
+    count += 1;
+} while (index < 99);
+
+
+console.log(count); // 45
