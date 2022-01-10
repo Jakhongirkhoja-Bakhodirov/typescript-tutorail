@@ -1,14 +1,14 @@
 //if-else
-const max = 100;
-let counter = 100;
+// const max = 100;
+// let counter = 100;
 
-if (counter < max) {
-    counter++;
-} else {
-    counter = 1;
-}
+// if (counter < max) {
+//     counter++;
+// } else {
+//     counter = 1;
+// }
 
-console.log(counter);
+// console.log(counter);
 
 let discount: number = 32;
 let itemCount = 11;
@@ -79,21 +79,28 @@ switch (month) {
 console.log(`The month ${month} in ${year} has ${day} days`);
 
 //A simple for example
-for (let i = 0; i < 10; i++) {
-    console.log(i);
-}
+// for (let i = 0; i < 10; i++) {
+//     console.log(i);
+// }
 
 //Optional block
-let i = 0;
-for(; i < 5 ; i++) {
-    console.log(i);
-}
+// let i = 0;
+// for(; i < 5 ; i++) {
+//     console.log(i);
+// }
 
-let j = 0;
-for (; ;) {
-    console.log(j);
-    j++;
-    if (j > 9) break;
-}
+// let j = 0;
+// for (; ;) {
+//     console.log(j);
+//     j++;
+//     if (j > 9) break;
+// }
 
+//While Loop
+let counter = 0;
+
+while (counter < 5) {
+    console.log(counter);
+    counter++;
+}
 
