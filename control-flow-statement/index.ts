@@ -78,3 +78,22 @@ switch (month) {
 
 console.log(`The month ${month} in ${year} has ${day} days`);
 
+//A simple for example
+for (let i = 0; i < 10; i++) {
+    console.log(i);
+}
+
+//Optional block
+let i = 0;
+for(; i < 5 ; i++) {
+    console.log(i);
+}
+
+let j = 0;
+for (; ;) {
+    console.log(j);
+    j++;
+    if (j > 9) break;
+}
+
+
