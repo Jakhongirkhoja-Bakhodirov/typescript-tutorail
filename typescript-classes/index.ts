@@ -77,40 +77,67 @@
 // console.log(person.age);
 
 //TypeScript Classes Inheritance
+// class Person {
+//     constructor(private firstName: string, private lastName: string) {
+//         this.firstName = firstName;
+//         this.lastName = lastName;
+//     }
+//     getFullName(): string {
+//         return `${this.firstName} ${this.lastName}`;
+//     }
+//     describe(): string {
+//         return `This is ${this.firstName} ${this.lastName}.`;
+//     }
+// }
+
+// const person = new Person('James' , 'Bond');
+
+// console.log(person.describe());
+
+// class Employee extends Person {
+//     constructor(firstName:string , lastName:string , private jobTitle:string) {
+//         // call the constructor of the Person class:
+//         super(firstName,lastName);
+//     }
+
+//     //You can also override a paren class methods
+//     describe(): string {
+//         return super.describe() + ` I'm a ${this.jobTitle}`;
+//     }
+// }
+
+// const employee = new Employee('John' , 'Doe' , 'Full Stack Developer');
+
+// console.log(employee.getFullName());
+
+// console.log(employee.describe());
+
+//Static properties and methods
 class Person {
-    constructor(private firstName: string, private lastName: string) {
+    static headcount:number = 0;
+    firstName:string;
+    lastName:string;
+    age:number;
+    email:string;
+
+    constructor(firstName:string , lastName:string , age:number , email:string) {
         this.firstName = firstName;
         this.lastName = lastName;
-    }
-    getFullName(): string {
-        return `${this.firstName} ${this.lastName}`;
-    }
-    describe(): string {
-        return `This is ${this.firstName} ${this.lastName}.`;
-    }
-}
-
-const person = new Person('James' , 'Bond');
-
-console.log(person.describe());
-
-class Employee extends Person {
-    constructor(firstName:string , lastName:string , private jobTitle:string) {
-        // call the constructor of the Person class:
-        super(firstName,lastName);
+        this.age = age;
+        this.email = email;
+        Person.headcount++;
     }
 
-    //You can also override a paren class methods
-    describe(): string {
-        return super.describe() + ` I'm a ${this.jobTitle}`;
+    public getHeadCount() {
+        return Person.headcount;
     }
 }
 
-const employee = new Employee('John' , 'Doe' , 'Full Stack Developer');
+const person1 = new Person('Stive' , 'Jobs' , 45 , 'something@gmail.com');
+ 
+console.log(person1.getHeadCount());
+const person2 = new Person('Stive' , 'Jobs' , 45 , 'something@gmail.com');
+ 
 
-console.log(employee.getFullName());
 
-console.log(employee.describe());
-
-
-
+console.log(person2.getHeadCount());
