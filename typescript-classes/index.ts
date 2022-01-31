@@ -113,31 +113,79 @@
 // console.log(employee.describe());
 
 //Static properties and methods
-class Person {
-    static headcount:number = 0;
-    firstName:string;
-    lastName:string;
-    age:number;
-    email:string;
+// class Person {
+//     static headcount:number = 0;
+//     firstName:string;
+//     lastName:string;
+//     age:number;
+//     email:string;
 
-    constructor(firstName:string , lastName:string , age:number , email:string) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.age = age;
-        this.email = email;
-        Person.headcount++;
+//     constructor(firstName:string , lastName:string , age:number , email:string) {
+//         this.firstName = firstName;
+//         this.lastName = lastName;
+//         this.age = age;
+//         this.email = email;
+//         Person.headcount++;
+//     }
+
+//     public getHeadCount() {
+//         return Person.headcount;
+//     }
+// }
+
+// const person1 = new Person('Stive' , 'Jobs' , 45 , 'something@gmail.com');
+ 
+// console.log(person1.getHeadCount());
+// const person2 = new Person('Stive' , 'Jobs' , 45 , 'something@gmail.com');
+ 
+
+
+// console.log(person2.getHeadCount());
+abstract class Employee {
+    constructor(private firstName: string, private lastName: string) {
+    }
+    abstract getSalary(): number
+    get fullName(): string {
+        return `${this.firstName} ${this.lastName}`;
+    }
+    compensationStatement(): string {
+        return `${this.fullName} makes ${this.getSalary()} a month.`;
     }
 
-    public getHeadCount() {
-        return Person.headcount;
+    setFirstName(firstName:string):void {
+        this.firstName = firstName;
+    }
+
+    get getFirstName():string {
+        return `${this.firstName}`;
+    }
+}
+class FullTimeEmployee extends Employee {
+    constructor(firstName: string, lastName: string, private salary: number) {
+        super(firstName, lastName);
+    }
+    getSalary(): number {
+        return this.salary;
     }
 }
 
-const person1 = new Person('Stive' , 'Jobs' , 45 , 'something@gmail.com');
- 
-console.log(person1.getHeadCount());
-const person2 = new Person('Stive' , 'Jobs' , 45 , 'something@gmail.com');
- 
+class Contractor extends Employee {
+    constructor(firstName: string, lastName: string, private rate: number, private hours: number) {
+        super(firstName, lastName);
+    }
+    getSalary(): number {
+        return this.rate * this.hours;
+    }
+}
 
+let john = new FullTimeEmployee('John', 'Doe', 12000);
+let jane = new Contractor('Jane', 'Doe', 100, 160);
 
-console.log(person2.getHeadCount());
+console.log(john.compensationStatement());
+console.log(jane.compensationStatement());
+
+console.log(john.getFirstName);
+
+john.setFirstName('change name of John');
+
+console.log(john.getFirstName);
