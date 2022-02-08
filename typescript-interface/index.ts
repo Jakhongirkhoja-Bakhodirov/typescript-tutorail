@@ -99,3 +99,13 @@ const mailToJack = new Mail('jack@gmail.com' , 12);
 
 mailToJack.later('otherjack@gmail.com' , 12);
 
+interface C {
+    c():void
+}
+
+interface B {
+    b():void
+}
+interface D extends B , C {
+    d():void
+}
