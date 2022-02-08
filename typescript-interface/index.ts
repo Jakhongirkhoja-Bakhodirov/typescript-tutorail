@@ -109,3 +109,36 @@ interface B {
 interface D extends B , C {
     d():void
 }
+
+//Interfaces extending classes
+
+class Control {
+    public state:boolean
+}
+
+interface StatefulControl extends Control {
+    enable():void 
+}
+
+class Button extends Control implements StatefulControl {
+    enable(): void {
+        
+    }
+}
+
+
+class TextBox extends Control implements StatefulControl {
+    enable(): void {
+        
+    }
+}
+
+class Label extends Control {
+
+}
+
+// class Chart implements StatefulControl {
+//     enable(): void {
+        
+//     }
+// }
