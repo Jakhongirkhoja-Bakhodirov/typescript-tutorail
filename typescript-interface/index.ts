@@ -61,3 +61,41 @@ class Student implements Json {
 const student = new Student('James' , 'Bond');
 
 console.log(student.toJson());
+
+
+interface Mailable {
+    send(email:string):boolean
+    queue(email:string):boolean
+}
+
+interface FutureMailable extends Mailable {
+    later(email:string , after:number) : boolean
+}
+
+class Mail implements FutureMailable {
+    email;
+    after;
+    constructor(email:string , after:number) {
+        this.email = email;
+        this.after = after;
+    }
+    later(email: string, after: number): boolean {
+        console.log(`Send email to ${email} in ${after} ms.`);
+        return true;
+    }
+
+    send(email: string): boolean {
+        console.log(`Send message to ${email}`);
+        return true;
+    }
+
+    queue(email: string): boolean {
+       console.log(`Queue an email to ${email}`);
+        return true;
+    }
+}
+
+const mailToJack = new Mail('jack@gmail.com' , 12);
+
+mailToJack.later('otherjack@gmail.com' , 12);
+
